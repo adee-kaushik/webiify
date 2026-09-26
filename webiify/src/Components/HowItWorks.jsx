@@ -7,8 +7,8 @@ function HowItWorks() {
   ];
 
   return (
-    <section className="px-6 py-20 bg-gray-50">
-      <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+    <section className="px-6 py-20 bg-gray-50 dark:bg-gray-900 transition-colors">
+      <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
         How It Works
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
@@ -17,8 +17,8 @@ function HowItWorks() {
             <div className="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg mb-4">
               {step.number}
             </div>
-            <h3 className="text-lg font-semibold text-gray-900">{step.title}</h3>
-            <p className="text-sm text-gray-600 mt-2">{step.desc}</p>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{step.title}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">{step.desc}</p>
           </div>
         ))}
       </div>

@@ -24,12 +24,16 @@ function Templates() {
   }
 
   return (
-    <section id="templates" className="px-6 py-20 bg-white">
-      <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">
+    <section id="templates" className="px-6 py-20 bg-white dark:bg-gray-900 transition-colors">
+  <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-10">
         Our Templates
       </h2>
 
-      <div className="flex flex-wrap md:flex-nowrap gap-3 md:overflow-x-auto pb-4 max-w-5xl mx-auto scrollbar-hide">
+      <div className={`whitespace-nowrap px-5 py-2 rounded-full border font-medium transition ${
+  selectedCategory === category
+    ? "bg-blue-600 text-white border-blue-600"
+    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-blue-400"
+}`}>
         {categories.map((category) => (
           <button
             key={category}
@@ -50,12 +54,12 @@ function Templates() {
           {[1, 2, 3].map((num) => (
             <div
               key={num}
-              className="border rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition"
+              className="border dark:border-gray-700 rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition"
             >
-              <div className="h-40 bg-gray-100 rounded-lg mb-4 flex items-center justify-center text-gray-400">
+              <div className="h-40 bg-gray-100 dark:bg-gray-800 rounded-lg mb-4 flex items-center justify-center text-gray-400">
                 Preview
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white>
                 {selectedCategory} Template {num}
               </h3>
               <p className="text-sm text-gray-500 mt-1">Coming Soon</p>

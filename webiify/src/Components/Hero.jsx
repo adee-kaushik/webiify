@@ -1,10 +1,10 @@
 function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center text-center px-6 py-24 bg-gray-50">
-      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 max-w-2xl">
+    <section className="flex flex-col items-center justify-center text-center px-6 py-24 bg-gray-50 dark:bg-gray-900 transition-colors">
+      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white max-w-2xl">
         Ready-to-launch websites for Indian Businesses
       </h1>
-      <p className="mt-4 text-lg text-gray-600 max-w-xl">
+      <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-xl">
         Choose a design, share your details, and get a live website in a day.
       </p>
       
