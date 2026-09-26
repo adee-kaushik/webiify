@@ -7,13 +7,18 @@ function Hero() {
       <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-xl animate-fade-in-up [animation-delay:150ms]">
         Choose a design, share your details, and get a live website in a day.
       </p>
-      
-  <a href="#templates" className="mt-8 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 animate-fade-in-up [animation-delay:300ms]"
->
-  View Templates
-</a>
+      <a
+        href="#templates"
+        className="mt-8 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 animate-fade-in-up [animation-delay:300ms]"
+      >
+        View Templates
+      </a>
     </section>
   );
 }
 
 export default Hero;
+
+
+
+
