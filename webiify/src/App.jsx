@@ -7,7 +7,7 @@ import Footer from './Components/Footer';
 
 function App() {
   return (
-    <div className="dark:bg-gray-900 transition-colors">
+    <div className="bg-brand-bg dark:bg-brand-bg-dark transition-colors font-body">
       <Navbar />
       <Hero />
       <Templates />

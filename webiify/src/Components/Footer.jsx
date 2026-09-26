@@ -1,23 +1,23 @@
 function Footer() {
   return (
-    <footer id="footer" className="px-6 py-12 bg-gray-900 text-gray-300">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="text-xl font-bold text-white">WebStore</div>
+    <footer id="footer" className="px-6 py-12 bg-brand-bg-dark text-gray-300 text-center">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-center items-center gap-6">
+        <div className="font-display text-xl font-semibold text-white">Webstore</div>
 
-        <div className="flex gap-6">
-          <a href="https://wa.me/918853099345" className="hover:text-white">
+        <div className="flex gap-6 font-body">
+          <a href="https://wa.me/91XXXXXXXXXX" className="hover:text-brand-accent">
             WhatsApp
           </a>
-          <a href="https://instagram.com/webiify" className="hover:text-white">
+          <a href="https://instagram.com/webstore" className="hover:text-brand-accent">
             Instagram
           </a>
-          <a href="mailto:adityaamishra7002@gmail.com" className="hover:text-white">
+          <a href="mailto:adityaamishra7002@gmail.com" className="hover:text-brand-accent">
             Email
           </a>
         </div>
       </div>
-      <p className="text-center text-sm text-gray-500 mt-8">
-        © 2026 WebStore. All rights reserved.
+      <p className="font-body text-sm text-gray-500 mt-8">
+        © 2026 Webstore. All rights reserved.
       </p>
     </footer>
   );

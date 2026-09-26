@@ -1,4 +1,9 @@
 @import "tailwindcss";
+
+html, body {
+  overflow-x: hidden;
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 @keyframes fade-in-up {
   from {
@@ -9,6 +14,22 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@theme {
+  --color-brand-bg: #FAF7F2;
+  --color-brand-bg-dark: #14181B;
+  --color-brand-teal: #1F5F5B;
+  --color-brand-accent: #E8873A;
+  --color-brand-text: #1B1F22;
+  --color-brand-muted: #6B7280;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Manrope", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
 }
 
 .animate-fade-in-up {
@@ -22,3 +43,4 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
