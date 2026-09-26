@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="px-6 py-12 bg-gray-900 text-gray-300">
+    <footer id="footer" className="px-6 py-12 bg-gray-900 text-gray-300">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-xl font-bold text-white">WebStore</div>
 
