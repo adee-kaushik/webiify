@@ -5,13 +5,13 @@ function Footer() {
         <div className="font-display text-xl font-semibold text-white">Webstore</div>
 
         <div className="flex gap-6 font-body">
-          <a href="https://wa.me/91XXXXXXXXXX" className="hover:text-brand-accent">
+          <a href="https://wa.me/919351219914" className="hover:text-brand-accent">
             WhatsApp
           </a>
-          <a href="https://instagram.com/webstore" className="hover:text-brand-accent">
+          <a href="https://instagram.com/web.store.in" className="hover:text-brand-accent">
             Instagram
           </a>
-          <a href="mailto:adityaamishra7002@gmail.com" className="hover:text-brand-accent">
+          <a href="mailto:webstore.templates@gmail.com" className="hover:text-brand-accent">
             Email
           </a>
         </div>
