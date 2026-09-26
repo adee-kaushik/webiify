@@ -5,7 +5,7 @@ function Footer() {
         <div className="text-xl font-bold text-white">WebStore</div>
 
         <div className="flex gap-6">
-          <a href="https://wa.me/91XXXXXXXXXX" className="hover:text-white">
+          <a href="https://wa.me/918853099345" className="hover:text-white">
             WhatsApp
           </a>
           <a href="https://instagram.com/webiify" className="hover:text-white">
