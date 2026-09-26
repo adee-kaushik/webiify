@@ -15,10 +15,14 @@ function Templates() {
     "Coaching Institutes",
   ];
 
+  const categoryDemos = {
+    "Textile & Garment Shops": "https://starter-amber-five.vercel.app",
+  };
+
   const plans = [
-    { tier: "Starter", price: "₹1,999" },
-    { tier: "Business", price: "₹4,599" },
-    { tier: "Pro", price: "₹8,999" },
+    { tier: "Starter", price: "₹1,999", recommended: false },
+    { tier: "Business", price: "₹4,599", recommended: true },
+    { tier: "Pro", price: "₹8,999", recommended: false },
   ];
 
   function handleSelect(category) {
@@ -53,23 +57,42 @@ function Templates() {
 
       {selectedCategory && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-8 animate-fade-in-up">
-          {plans.map((plan, index) => (
-            <div
-              key={plan.tier}
-              className="border border-brand-teal/15 dark:border-gray-700 rounded-xl p-6 text-center hover:scale-105 transition duration-300"
-            >
-              <div className="h-40 bg-brand-teal/5 dark:bg-gray-800 rounded-lg mb-4 flex items-center justify-center text-brand-muted">
-                Preview
-              </div>
-              <h3 className="font-display text-xl font-semibold text-brand-text dark:text-white">
-                {selectedCategory} : {plan.tier}
-              </h3>
-              <p className="font-body text-2xl font-semibold text-brand-accent mt-2">
-                {plan.price}
-              </p>
-              <p className="text-sm text-brand-muted mt-1">Coming Soon</p>
-            </div>
-          ))}
+          {plans.map((plan) => {
+            const demoLink = categoryDemos[selectedCategory];
+            const CardWrapper = demoLink ? "a" : "div";
+
+            return (
+              <CardWrapper
+                key={plan.tier}
+                {...(demoLink && { href: demoLink, target: "_blank", rel: "noopener noreferrer" })}
+                className={`relative rounded-xl p-6 text-center hover:scale-105 transition duration-300 block ${
+                  plan.recommended
+                    ? "bg-brand-teal/5 dark:bg-gray-800 shadow-lg"
+                    : "border border-brand-teal/15 dark:border-gray-700"
+                } ${demoLink ? "cursor-pointer" : ""}`}
+              >
+                {plan.recommended && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-accent text-white text-xs font-body font-semibold px-3 py-1 rounded-full">
+                    Recommended
+                  </span>
+                )}
+                <div className="h-40 bg-brand-teal/5 dark:bg-gray-800 rounded-lg mb-4 flex items-center justify-center text-brand-muted">
+                  Preview
+                </div>
+                <h3 className="font-display text-xl font-semibold text-brand-text dark:text-white">
+                  {selectedCategory} — {plan.tier}
+                </h3>
+                <p className="font-body text-2xl font-semibold text-brand-accent mt-2">
+                  {plan.price}
+                </p>
+                {demoLink ? (
+                  <p className="text-sm font-semibold text-brand-teal mt-1">View Demo →</p>
+                ) : (
+                  <p className="text-sm text-brand-muted mt-1">Coming Soon</p>
+                )}
+              </CardWrapper>
+            );
+          })}
         </div>
       )}
     </section>
