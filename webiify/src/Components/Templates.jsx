@@ -6,7 +6,7 @@ function Templates() {
   ];
 
   return (
-    <section className="px-6 py-20 bg-white">
+    <section id="templates" className="px-6 py-20 bg-white">
       <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
         Our Templates
       </h2>
