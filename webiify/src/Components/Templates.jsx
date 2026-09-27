@@ -16,7 +16,9 @@ function Templates() {
   ];
 
   const categoryDemos = {
-    "Textile & Garment Shops": "https://starter-amber-five.vercel.app",
+    "Textile & Garment Shops": {
+      Starter: "https://starter-amber-five.vercel.app",
+    },
   };
 
   const plans = [
@@ -58,7 +60,7 @@ function Templates() {
       {selectedCategory && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-8 animate-fade-in-up">
           {plans.map((plan) => {
-            const demoLink = categoryDemos[selectedCategory];
+            const demoLink = categoryDemos[selectedCategory]?.[plan.tier];
             const CardWrapper = demoLink ? "a" : "div";
 
             return (
