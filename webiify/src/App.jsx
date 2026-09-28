@@ -4,7 +4,7 @@ import Templates from './Components/Templates';
 import Pricing from './Components/Pricing';
 import About from './Components/About';
 import HowItWorks from './Components/HowItWorks';
-import FAQ from './Components/FAQ';
+// import FAQ from './Components/FAQ';
 import Footer from './Components/Footer';
 
 function App() {
