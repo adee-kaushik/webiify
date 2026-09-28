@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Reveal from './Reveal';
 import { categories, templates } from '../data/Templates';
-import { plans } from '../data/plans';
+import { plans } from '../data/Plans';
 import { waLink } from '../data/Site';
 
 const fadeMask = {

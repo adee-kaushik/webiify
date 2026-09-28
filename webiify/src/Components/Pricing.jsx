@@ -1,5 +1,5 @@
 import Reveal from './Reveal';
-import { plans } from '../data/plans';
+import { plans } from '../data/Plans';
 import { waLink } from '../data/Site';
 
 function Pricing() {
