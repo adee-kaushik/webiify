@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { site } from '../data/site';
+import { site } from '../data/Site';
 
 const links = [
   { label: "Templates", href: "#templates" },

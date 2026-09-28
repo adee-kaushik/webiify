@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Reveal from './Reveal';
 import { categories, templates } from '../data/templates';
 import { plans } from '../data/plans';
-import { waLink } from '../data/site';
+import { waLink } from '../data/Site';
 
 const fadeMask = {
   maskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
