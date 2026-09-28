@@ -1,4 +1,13 @@
 import { useState, useEffect } from 'react';
+import { site } from '../data/site';
+
+const links = [
+  { label: "Templates", href: "#templates" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "About", href: "#about" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "#footer" },
+];
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,19 +24,20 @@ function Navbar() {
   return (
     <nav className="px-6 py-4 bg-brand-bg dark:bg-brand-bg-dark border-b border-brand-teal/10 dark:border-white/10 transition-colors">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <a href="#" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full bg-brand-teal flex items-center justify-center text-white font-display font-semibold text-sm">
             W
           </div>
-          <span className="font-display text-2xl font-semibold text-brand-text dark:text-white">Webstore</span>
-        </div>
+          <span className="font-display text-2xl font-semibold text-brand-text dark:text-white">{site.name}</span>
+        </a>
 
         <div className="flex items-center gap-4">
           <ul className="hidden md:flex gap-6 font-body text-brand-text dark:text-gray-300 font-medium">
-            <li><a href="#" className="hover:text-brand-teal dark:hover:text-brand-accent">Home</a></li>
-            <li><a href="#templates" className="hover:text-brand-teal dark:hover:text-brand-accent">Templates</a></li>
-            <li><a href="#about" className="hover:text-brand-teal dark:hover:text-brand-accent">About</a></li>
-            <li><a href="#footer" className="hover:text-brand-teal dark:hover:text-brand-accent">Contact</a></li>
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="hover:text-brand-teal dark:hover:text-brand-accent">{link.label}</a>
+              </li>
+            ))}
           </ul>
 
           <button
@@ -50,10 +60,11 @@ function Navbar() {
 
       {isOpen && (
         <ul className="md:hidden flex flex-col gap-4 mt-4 font-body text-brand-text dark:text-gray-300 font-medium">
-          <li><a href="#" onClick={() => setIsOpen(false)} className="hover:text-brand-teal">Home</a></li>
-          <li><a href="#templates" onClick={() => setIsOpen(false)} className="hover:text-brand-teal">Templates</a></li>
-          <li><a href="#about" onClick={() => setIsOpen(false)} className="hover:text-brand-teal">About</a></li>
-          <li><a href="#footer" onClick={() => setIsOpen(false)} className="hover:text-brand-teal">Contact</a></li>
+          {links.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} onClick={() => setIsOpen(false)} className="hover:text-brand-teal">{link.label}</a>
+            </li>
+          ))}
         </ul>
       )}
     </nav>

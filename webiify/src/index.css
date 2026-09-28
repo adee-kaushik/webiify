@@ -1,35 +1,12 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
 
 html, body {
   overflow-x: hidden;
-}
-
-@custom-variant dark (&:where(.dark, .dark *));
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes blob {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(20px, -30px) scale(1.1);
-  }
-  66% {
-    transform: translate(-15px, 15px) scale(0.95);
-  }
-}
-
-.animate-blob {
-  animation: blob 8s ease-in-out infinite;
 }
 
 @theme {
@@ -48,8 +25,35 @@ body {
   font-family: var(--font-body);
 }
 
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(20px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-15px, 15px) scale(0.95);
+  }
+}
+
+.animate-blob {
+  animation: blob 8s ease-in-out infinite;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -60,3 +64,37 @@ body {
   scrollbar-width: none;
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+/* pause while a finger is pressed, or the mouse is over it (real mouse devices only) */
+.marquee:active .marquee-track {
+  animation-play-state: paused;
+}
+@media (hover: hover) {
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+/* people who turned off animations on their device: no motion, items just wrap */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+    width: auto;
+    flex-wrap: wrap;
+  }
+  .marquee-dup {
+    display: none;
+  }
+}
