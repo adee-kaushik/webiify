@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Reveal from './Reveal';
-import { categories, templates } from '../data/templates';
+import { categories, templates } from '../data/Templates';
 import { plans } from '../data/plans';
 import { waLink } from '../data/Site';
 
