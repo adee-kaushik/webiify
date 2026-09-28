@@ -6,7 +6,7 @@ function Hero() {
 
       <div className="relative z-10 max-w-2xl">
         <h1 className="font-display text-4xl md:text-5xl font-semibold text-brand-text dark:text-white leading-tight animate-fade-in-up">
-          Ready-to-launch websites for every small business
+          Ready-to-launch websites for All business
         </h1>
         <p className="mt-4 font-body text-lg text-brand-muted dark:text-gray-400 max-w-lg mx-auto animate-fade-in-up [animation-delay:150ms]">
           Whatever your business — cafe, gym, salon, clinic, or anything else — choose a design, share your details, and get a live website in days.
