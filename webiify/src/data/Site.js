@@ -2,8 +2,8 @@
 export const site = {
   name: "Webstore",
   whatsapp: "919351219914", // country code + number, no "+" or spaces
-  instagram: "webstore",
-  email: "adityaamishra7002@gmail.com",
+  instagram: "web.store.in",
+  email: "webstore.templates@gmail.com",
 };
 
 export function waLink(message = "") {
