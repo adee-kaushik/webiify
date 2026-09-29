@@ -12,7 +12,8 @@ html, body {
 @theme {
   --color-brand-bg: #FAF7F2;
   --color-brand-bg-dark: #14181B;
-  --color-brand-teal: #1F5F5B;
+  /* main colour of the site (was green-teal, now blue). Change this one value to change it everywhere */
+  --color-brand-teal: #2459C7;
   --color-brand-accent: #E8873A;
   --color-brand-text: #1B1F22;
   --color-brand-muted: #6B7280;
@@ -62,41 +63,6 @@ body {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 35s linear infinite;
-}
-
-/* pause while a finger is pressed, or the mouse is over it (real mouse devices only) */
-.marquee:active .marquee-track {
-  animation-play-state: paused;
-}
-@media (hover: hover) {
-  .marquee:hover .marquee-track {
-    animation-play-state: paused;
-  }
-}
-
-/* people who turned off animations on their device: no motion, items just wrap */
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none !important;
-    width: auto;
-    flex-wrap: wrap;
-  }
-  .marquee-dup {
-    display: none;
-  }
 }
 
 /* ---- Dark mode depth: light falls from the top, shade at the bottom ---- */

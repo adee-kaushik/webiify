@@ -2,11 +2,11 @@
 export const plans = [
   {
     tier: "Starter",
-    price: "₹1,999",
+    price: "₹2,499",
     recommended: false,
     includes: "",
     features: [
-      " Site with your Own details",
+      "Ready-made template with your details",
       "Home, Menu/Services, About, Contact pages",
       "WhatsApp button + Google Maps",
       "Live on a free subdomain",

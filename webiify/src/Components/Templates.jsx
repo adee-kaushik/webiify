@@ -1,13 +1,9 @@
 import { useState } from 'react';
 import Reveal from './Reveal';
+import AutoScroller from './Autoscroller';
 import { categories, templates } from '../data/Templates';
 import { plans } from '../data/Plans';
 import { waLink } from '../data/Site';
-
-const fadeMask = {
-  maskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
-  WebkitMaskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
-};
 
 function TemplateCard({ template }) {
   const plan = plans.find((p) => p.tier === template.level);
@@ -94,47 +90,39 @@ function Templates() {
           </p>
         </Reveal>
 
-        {/* Categories: slide on their own, pause on hover or press. Tap one to filter. */}
-        <div className="marquee overflow-hidden mb-10" style={fadeMask}>
-          <div className="marquee-track flex w-max animate-marquee">
-            {[...chips, ...chips].map((chip, index) => (
-              <div
-                key={`${chip}-${index}`}
-                className={`pr-3 ${index >= chips.length ? "marquee-dup" : ""}`}
-              >
-                <button
-                  onClick={() => setSelected(chip)}
-                  className={`whitespace-nowrap px-5 py-2 rounded-full border font-body font-medium transition ${
-                    selected === chip
-                      ? "bg-brand-teal text-white border-brand-teal"
-                      : "bg-transparent text-brand-text dark:text-gray-300 border-brand-teal/30 dark:border-gray-600 hover:border-brand-teal"
-                  }`}
-                >
-                  {chip}
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Categories: slide on their own, but you can also swipe or scroll them. Tap one to filter. */}
+        <AutoScroller
+          className="mb-10"
+          scrollerClassName="py-1"
+          items={chips}
+          getKey={(chip) => chip}
+          itemClassName="pr-3"
+          speed={35}
+          renderItem={(chip) => (
+            <button
+              onClick={() => setSelected(chip)}
+              className={`whitespace-nowrap px-5 py-2 rounded-full border font-body font-medium transition ${
+                selected === chip
+                  ? "bg-brand-teal text-white border-brand-teal"
+                  : "bg-transparent text-brand-text dark:text-gray-300 border-brand-teal/30 dark:border-gray-600 hover:border-brand-teal"
+              }`}
+            >
+              {chip}
+            </button>
+          )}
+        />
 
         {visible.length > 0 ? (
           <>
             {autoSlide ? (
-              <div className="marquee overflow-hidden py-4" style={fadeMask}>
-                <div
-                  className="marquee-track flex w-max animate-marquee"
-                  style={{ animationDuration: `${visible.length * 8}s` }}
-                >
-                  {[...visible, ...visible].map((template, index) => (
-                    <div
-                      key={`${template.id}-${index}`}
-                      className={`w-72 md:w-80 shrink-0 pr-6 ${index >= visible.length ? "marquee-dup" : ""}`}
-                    >
-                      <TemplateCard template={template} />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <AutoScroller
+                scrollerClassName="py-4"
+                items={visible}
+                getKey={(template) => template.id}
+                itemClassName="w-72 md:w-80 pr-6"
+                speed={30}
+                renderItem={(template) => <TemplateCard template={template} />}
+              />
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {visible.map((template, index) => (
@@ -164,7 +152,7 @@ function Templates() {
         ) : (
           <div className="text-center py-10">
             <p className="font-display text-xl text-brand-text dark:text-white">
-              {selected} More Designs on the way.
+              {selected} templates are coming soon.
             </p>
             <p className="font-body text-brand-muted dark:text-gray-400 mt-2">
               Tell us what you need and we'll build it for you.
